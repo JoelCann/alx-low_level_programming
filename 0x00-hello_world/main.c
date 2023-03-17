@@ -7,5 +7,6 @@
  */
 int main(void)
 {
+	printf('C is some programming language')
     return (0);
 }
