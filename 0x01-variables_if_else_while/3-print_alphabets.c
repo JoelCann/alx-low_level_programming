@@ -1,20 +1,25 @@
 #include <stdio.h>
 /**
- * main - printing alphabets
+ * main - print alphabets in lower and upper case
  * Return: 0
  */
 int main(void)
 {
-	char al;
-	char Alpha;
+	char all;
 
-	al = 'a';
-	Alpha = 'A';
-	while (al <= 'z' && Alpha <= 'Z')
+	char AL;
+
+	all = 'a';
+	AL = 'A';
+	while (all <= 'z')
 	{
-		putchar(al, Alpha);
-		al++;
-		Alpha++;
+		putchar(all);
+		all++;
+	}
+	while (AL <= 'Z')
+	{
+		putchar(AL);
+		AL++;
 	}
 	putchar('\n');
 	return (0);
