@@ -10,7 +10,7 @@ int main(void)
 
 	al = 'a';
 	Alpha = 'A';
-	while (al <= 'z')
+	while (al <= 'z' && Alpha <= 'Z')
 	{
 		putchar(al, Alpha);
 		al++;
