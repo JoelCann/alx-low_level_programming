@@ -1,19 +1,15 @@
 #include "main.h"
 /**
- * alphaprinter - printing alphabets
- *
- * Return: 0
+ * print_alphabet - print alphabets
+ * Return: void
  */
-int main(void)
+void print_alphabet(void)
 {
-	void alpha_printer(void)
+	char c;
+
+	for (c = 'a'; c <= 'z'; c++)
 	{
-		int alph;
-		for (alph = 'a' ; alph <= 'z' alph ++)
-		{
-			_putchar('alph');
-		}
-		_putchar('\n');
+		_putchar(c);
 	}
-	return (0);
+	_putchar('\n');
 }
