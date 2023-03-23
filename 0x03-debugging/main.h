@@ -9,3 +9,6 @@ void positive_or_negative(int i);
 
 /*function to print largest number amongst 3 integers*/
 int largest_number(int a, int b, int c)
+
+
+#endif /* MAIN_H */
