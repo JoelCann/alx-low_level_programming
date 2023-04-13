@@ -2,16 +2,16 @@
 #include <string.h>
 /**
  * str_concat - concatenate strings
- * @s1: string 1
- * @s2: string 2
- * Return: conc
+ * @s1: first string
+ * @s2: second string
+ * Return: concatenated string
  */
 char *str_concat(char *s1, char *s2)
 {
 
-	size_t len1;
-	size_t len2;
-	char *result;
+	size_t str1;
+	size_t str2;
+	char *merged;
 
 	if (s1 == NULL)
 	{
@@ -21,16 +21,16 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-	len1 = strlen(s1);
-	len2 = strlen(s2);
-	result = malloc((len1 + len2 + 1) * sizeof(char));
+	str1 = strlen(s1);
+	str2 = strlen(s2);
+	merged = malloc((str1 + str2 + 1) * sizeof(char));
 
-	if (result == NULL)
+	if (merged == NULL)
 	{
 		return (NULL);
 	}
-	strcpy(result, s1);
-	strcat(result, s2);
-	return (result);
+	strcpy(merged, s1);
+	strcat(merged, s2);
+	return (merged);
 }
 
