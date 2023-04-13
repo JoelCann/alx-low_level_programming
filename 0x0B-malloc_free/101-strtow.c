@@ -2,10 +2,10 @@
 #include "main.h"
 
 /**
- * count_word - counts the number of words
- * @s: The string to be analysed
+ * count_word - counts number of words in string
+ * @s: The string
  *
- * Return: Word count
+ * Return: total word count
  */
 int count_word(char *s)
 {
@@ -14,24 +14,24 @@ int count_word(char *s)
 	b = 0;
 	flag = 0;
 
-	for (a = 0; s[a] != '\0'; a++)
+	for (a = 0; s[a] != '\0'; a += 1)
 	{
 		if (s[a] == ' ')
 			flag = 0;
 		else if (flag == 0)
 		{
 			flag = 1;
-			b++;
+			b += 1;
 		}
 	}
 	return (b);
 }
 
 /**
- * **strtow - Will split a string in to words
- * @str: The string to be split
+ * **strtow - splits string into two
+ * @str: The string
  *
- * Return: The pointer to an array of strings otherwise NULL
+ * Return: pointer to an array of strings otherwise NULL
  */
 char **strtow(char *str)
 {
@@ -39,7 +39,7 @@ char **strtow(char *str)
 	int x, y = 0, a = 0, len = 0, words, start, stop;
 
 	while (*(str + len))
-		len++;
+		len += 1;
 	words = count_word(str);
 	if (words == 0)
 		return (NULL);
@@ -48,7 +48,7 @@ char **strtow(char *str)
 	if (mtx == NULL)
 		return (NULL);
 
-	for (x = 0; x <= len; x++)
+	for (x = 0; x <= len; x += 1)
 	{
 		if (str[x] == ' ' || str[x] == '\0')
 		{
@@ -62,7 +62,7 @@ char **strtow(char *str)
 					*tmp++ = str[start++];
 				*tmp = '\0';
 				mtx[y] = tmp - a;
-				y++;
+				y += 1;
 				a = 0;
 			}
 		}
