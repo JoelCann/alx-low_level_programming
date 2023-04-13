@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * create_array - array of characters
- * @c: character
- * @size: size of char
+ * create_array - array of type char
+ * @c: characters/string
+ * @size: number of characters
  * Return: null
  */
 
@@ -22,7 +22,7 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	}
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size; i + 1)
 	{
 		array[i] = c;
 	}

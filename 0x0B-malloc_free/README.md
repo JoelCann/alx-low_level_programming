@@ -1,1 +1,1 @@
-0x0B-malloc_free
+Project on malloc and free functions fir dynamic memory allocations
