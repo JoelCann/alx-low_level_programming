@@ -7,7 +7,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int total_length = 0;
+	int maxlength = 0;
 
 	int i, j, k;
 
@@ -17,33 +17,33 @@ char *argstostr(int ac, char **av)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < ac; i++)
+	for (i = 0; i < ac; i += 1)
 	{
 		j = 0;
 		while (av[i][j] != '\0')
 		{
-			total_length++;
-			j++;
+			maxlength++;
+			j += 1;
 		}
-		total_length++;
+		maxlength++;
 	}
-	result = malloc((total_length + 1) * sizeof(char));
+	result = malloc((maxlength + 1) * sizeof(char));
 	if (result == NULL)
 	{
 		return (NULL);
 	}
 	k = 0;
-	for (i = 0; i < ac; i++)
+	for (i = 0; i < ac; i += 1)
 	{
 		j = 0;
 		while (av[i][j] != '\0')
 		{
 			result[k] = av[i][j];
-			j++;
-			k++;
+			j += 1;
+			k += 1;
 		}
 		result[k] = '\n';
-		k++;
+		k += 1;
 	}
 	result[k] = '\0';
 	return (result);
