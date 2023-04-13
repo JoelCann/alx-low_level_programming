@@ -1,24 +1,24 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * _strdup - return pointers
- * @str: string
- * Return: new string
+ * _strdup - function to produce pointers
+ * @str: string variable
+ * Return: pointer to string
  */
 char *_strdup(char *str)
 {
-	char *new_str;
+	char *strp;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	new_str = malloc((strlen(str) + 1) * sizeof(char));
-	if (new_str == NULL)
+	strp = malloc((strlen(str) + 1) * sizeof(char));
+	if (strp == NULL)
 	{
 		return (NULL);
 	}
-	strcpy(new_str, str);
-	return (new_str);
+	strcpy(strp, str);
+	return (strp);
 }
 
