@@ -2,8 +2,8 @@
 
 /**
  * op_add - sums up two integers
- * @a: int one
- * @b: int two
+ * @x: int one
+ * @y: int two
  *
  * Return: total
  */
@@ -14,8 +14,8 @@ int op_add(int x, int y)
 
 /**
  * op_sub - difference of two integers.
- * @a: int one
- * @b: int two
+ * @x: int one
+ * @y: int two
  *
  * Return: total difference
  */
@@ -26,8 +26,8 @@ int op_sub(int x, int y)
 
 /**
  * op_mul - mulplies an integer by another
- * @a: int one
- * @b: int two
+ * @x: int one
+ * @y: int two
  *
  * Return: total product
  */
@@ -38,8 +38,8 @@ int op_mul(int x, int y)
 
 /**
  * op_div - divides an integer by another
- * @a: int one
- * @b: int two
+ * @x: int one
+ * @y: int two
  *
  * Return: final quotient.
  */
@@ -50,8 +50,8 @@ int op_div(int x, int y)
 
 /**
  * op_mod - modulo of two integers
- * @a: int one
- * @b: int two
+ * @x: int one
+ * @y: int two
  *
  * Return: the remainder
  */
