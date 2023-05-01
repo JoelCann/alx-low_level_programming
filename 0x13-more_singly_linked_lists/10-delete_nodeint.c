@@ -1,44 +1,39 @@
 #include "lists.h"
 
 /**
- * insert_nodeint_at_index - deletes a node in a linked list at a certain index
+ * delete_nodeint_at_index - deletes a node in a linked list at a certain index
  * @head: pointer to the first element in the list
- * @idx: index of the node to delete
- * @n: random number
- * Return: 1 (Success), or -1 (Fail)
+ * @index: index of the node to delete
+ * Return: one if succesful or negative one if failed
  */
-listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
+int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	if (head == NULL)
-		return (NULL);
+	listint_t *temporary = *head;
+	listint_t *curr = NULL;
+	unsigned int a = 0;
 
-	listint_t *new = malloc(sizeof(listint_t));
+	if (*head == NULL)
+		return (-1);
 
-	if (new == NULL)
-		return (NULL);
-
-	new->n = n;
-	new->next = NULL;
-
-	if (idx == 0)
+	if (index == 0)
 	{
-		new->next = *head;
-		*head = new;
-		return (new);
-	}
-	listint_t *temp = *head;
-
-	for (unsigned int i = 0; i < idx - 1 && temp != NULL; i++)
-		temp = temp->next;
-
-	if (temp == NULL)
-	{
-		free(new);
-		return (NULL);
+		*head = (*head)->next;
+		free(temporary);
+		return (1);
 	}
 
-	new->next = temp->next;
-	temp->next = new;
+	while (a < index - 1)
+	{
+		if (!temporary || !(temporary->next))
+			return (-1);
+		temporary = temporary->next;
+		a += 1;
+	}
 
-	return (new);
+
+	curr = temporary->next;
+	temporary->next = curr->next;
+	free(curr);
+
+	return (1);
 }
