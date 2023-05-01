@@ -1,13 +1,13 @@
 #include "lists.h"
 
 /**
- * delete_nodeint_at_index - deletes a node from a particular
+ * insert_nodeint_at_index - deletes a node from a particular
  * index in a linked list
  * @head: points to the first object in a linked list.
  * @idx: index of the node to be deleted.
  *
- *insert_nodeint_at_index - inserts node into particular index
- *
+ * insert_nodeint_at_index -  inserts node into particular index
+ * @n: random number
  * Return: 1 if successful or -1 if failed
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
