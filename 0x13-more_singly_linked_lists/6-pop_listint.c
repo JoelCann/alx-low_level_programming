@@ -7,19 +7,18 @@
  *
  * Return: items in deleted node/ zero if the list was empty
  */
-int pop_listint(listint_t **const head)
+int pop_listint(listint_t **head)
 {
+	listint_t *temp;
+	int num;
+
 	if (!head || !*head)
-	{
 		return (0);
-	}
 
-	const int num = (*head)->n;
-	listint_t *const next_node = (*head)->next;
-
+	num = (*head)->n;
+	temp = (*head)->next;
 	free(*head);
-	*head = next_node;
+	*head = temp;
 
 	return (num);
 }
-
