@@ -5,7 +5,7 @@
  * node in a linked list
  * @head: points to the very first element inside a linked list
  *
- * Return: items in deleted node/ 0 if the list was empty
+ * Return: items in deleted node/ zero if the list was empty
  */
 int pop_listint(listint_t **const head)
 {
