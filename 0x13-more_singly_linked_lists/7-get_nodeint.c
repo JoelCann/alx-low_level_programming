@@ -5,18 +5,13 @@
  * @head: first node in the linked list
  * @index: index of the node to return
  *
- * Return: pointer to the node we're looking for, or NULL
+ * Return: returns NULL or a pointer to the node requested
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	unsigned int i = 0;
-	listint_t *temp = head;
+	unsigned int i;
 
-	while (temp && i < index)
-	{
-		temp = temp->next;
-		i++;
-	}
-
-	return (temp ? temp : NULL);
+	for (i = 0; head && i < index; i += 1)
+		head = head->next;
+	return (head);
 }
