@@ -13,12 +13,12 @@ int pop_listint(listint_t **const head)
 	{
 		return (0);
 	}
+
 	const int number = (*head)->n;
-
 	listint_t *const next_node = (*head)->next;
-
 	free(*head);
 	*head = next_node;
 
-	return (number);
+    return (number);
 }
+
