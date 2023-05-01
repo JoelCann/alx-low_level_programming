@@ -9,7 +9,7 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *cfnode, *temploc;
+	listint_t *fnode, *temploc;
 
 	if (head == NULL)
 		return;
