@@ -1,36 +1,36 @@
 #include "lists.h"
 /**
- * print_listint_safe - function that prints a linked list with a loop safely.
- * @head: pointer to the 1st node of the linked list
- * Return: new_node
+ * print_listint_safe - prints a linked list with a loop.
+ * @head: points to the first node in a linked list
+ * Return: returns a new node
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *tmp_n = NULL;
-	const listint_t *l_n = NULL;
+	const listint_t *tmpn = NULL;
+	const listint_t *ln = NULL;
 	size_t counter = 0;
-	size_t new_n;
+	size_t newn;
 
-	tmp_n = head;
-	while (tmp_n)
+	tmpn = head;
+	while (tmpn)
 	{
-		printf("[%p] %d\n", (void *)tmp_n, tmp_n->n);
+		printf("[%p] %d\n", (void *)tmpn, tmpn->n);
 		counter++;
-		tmp_n = tmp_n->next;
-		l_n = head;
-		new_n = 0;
-		while (new_n < counter)
+		tmpn = tmpn->next;
+		ln = head;
+		newn = 0;
+		while (newn < counter)
 		{
-			if (tmp_n == l_n)
+			if (tmpn == ln)
 			{
-				printf("-> [%p] %d\n", (void *)tmp_n, tmp_n->n);
+				printf("-> [%p] %d\n", (void *)tmpn, tmpn->n);
 				return (counter);
 			}
-			l_n = l_n->next;
-			new_n++;
+			ln = ln->next;
+			newn += 1;
 		}
 		if (!head)
-			exit(98);
+		exit(98);
 	}
 	return (counter);
 }
