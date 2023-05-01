@@ -8,7 +8,7 @@
  *
  * insert_nodeint_at_index -  inserts node into particular index
  * @n: random number
- * Return: 1 if successful or -1 if failed
+ * Return: 1 (Success), or -1 (Fail)
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
