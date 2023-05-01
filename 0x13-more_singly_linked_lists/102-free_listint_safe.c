@@ -6,35 +6,29 @@
  *
  * Return: total no. of numbers inside a freed list
  */
-size_t free_listint_safe(listint_t **h)
+listint_t *find_listint_loop(listint_t *head)
 {
-	size_t length = 0;
-	int difference;
-	listint_t *tmp;
+	listint_t *sl = head;
+	listint_t *ft = head;
 
-	if (!h || !*h)
-		return (0);
+	if (!head)
+		return (NULL);
 
-	while (*h)
+	while (sl && ft && ft->next)
 	{
-		difference = *h - (*h)->next;
-		if (difference > 0)
+		ft = ft->next->next;
+		sl = sl->next;
+		if (ft == sl)
 		{
-			tmp = (*h)->next;
-			free(*h);
-			*h = tmp;
-			length += 1;
-		}
-		else
-		{
-			free(*h);
-			*h = NULL;
-			length++;
-			break;
+			sl = head;
+			while (sl != ft)
+			{
+				sl = sl->next;
+				ft = ft->next;
+			}
+			return (ft);
 		}
 	}
 
-	*h = NULL;
-
-	return (length);
+	return (NULL);
 }
