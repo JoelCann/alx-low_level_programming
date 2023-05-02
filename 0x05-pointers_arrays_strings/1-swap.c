@@ -1,15 +1,15 @@
 #include <stdio.h>
 /**
- * swap_int - swap numbers
- * @a: number 1
- * @b: number 2
+ * swap_int - change positions of numbers
+ * @a: first number
+ * @b: second number
  * Return:0
  */
 void swap_int(int *a, int *b)
 {
-	int z = *a;
+	int swp = *a;
 
 	*a = *b;
 
-	*b = z;
+	*b = swp;
 }
