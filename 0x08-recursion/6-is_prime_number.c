@@ -29,7 +29,7 @@ int actual_prime(int a, int b)
 {
 	if (b == 1)
 		return (1);
-	if (a % b == 0 && x > 0)
+	if (a % b == 0 && b > 0)
 		return (0);
 	return (actual_prime(a, b - 1));
 }
