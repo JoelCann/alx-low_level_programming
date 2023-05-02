@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * reset_to_98 - update the pointer value
- * @n: interger value
- * Return: nothing
+ * reset_to_98 - updates the value of pointer
+ * @n: int value
+ * Return: zero
  */
 void reset_to_98(int *n)
 {
