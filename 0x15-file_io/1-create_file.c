@@ -7,26 +7,26 @@
  *
  * Return: 1 if successful/ -1 if failed
  */
-int create_file(const char *filename, const char *text_content)
+int create_file(const char *filename, char *text_content)
 {
-	if (filename == NULL || text_content == NULL)
-	{
-		return (-1);
-	}
-	int file_desc = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+	int file_d, Written_bytes, text_len = 0, mode = S_IRUSR | S_IWUSR;
 
-	if (file_desc == -1)
-	{
+	if (filename == NULL)
 		return (-1);
-	}
-	ssize_t text_length = strlen(text_content);
-	ssize_t written_bytes = write(file_desc, text_content, text_length);
+	file_d = open(filename, O_WRONLY | O_CREAT | O_TRUNC, mode);
+	if (file_d == -1)
+		return (-1);
 
-	if (written_bytes != text_length)
+	if (text_content != NULL)
 	{
-		close(file_desc);
-		return (-1);
+		while (text_content[text_len])
+			text_len += 1;
+
+		Written_bytes = write(file_d, text_content, text_len);
+		if (Written_bytes != text_len)
+			return (-1);
 	}
-	close(file_desc);
-	return (0);
+
+	close(file_d);
+	return (1);
 }
