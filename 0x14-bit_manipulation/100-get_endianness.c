@@ -1,15 +1,15 @@
 #include "main.h"
 /**
- * get_endianness - checks the endianness of the system
+ * get_endianness - checks for endianness
  *
- * Return: 0 if big endian, 1 if little endian
+ * Return: 0 if large endian/ 1 if small  endian
  */
 int get_endianness(void)
 {
-	uint16_t num = 0x0001;
-	uint8_t *byte_ptr = (uint8_t *)&num;
+	uint16_t number = 0x0001;
+	uint8_t *bytePointer = (uint8_t *)&number;
 
-	if (*byte_ptr == 0x01)
+	if (*bytePointer == 0x01)
 	{
 		return (1);
 	}
