@@ -13,20 +13,20 @@ int create_file(const char *filename, const char *text_content)
 	{
 		return (-1);
 	}
-	int file_d = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+	int file_desc = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
 
-	if (file_d == -1)
+	if (file_desc == -1)
 	{
 		return (-1);
 	}
 	ssize_t text_length = strlen(text_content);
-	ssize_t written_bytes = write(file_d, text_content, text_length);
+	ssize_t written_bytes = write(file_desc, text_content, text_length);
 
 	if (written_bytes != text_length)
 	{
-		close(file_d);
+		close(file_desc);
 		return (-1);
 	}
-	close(file_d);
+	close(file_desc);
 	return (0);
 }
