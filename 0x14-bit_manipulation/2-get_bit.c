@@ -1,14 +1,15 @@
 #include "main.h"
 /**
- * get_bit - returns the value of a bit at a given index
+ * get_bit - produces bit value at a particular index
  * @n: unsigned long int number to check
- * @index: bit index to get
+ * @index: the index we are looking for
  *
- * Return: the value of the bit at index or -1 if index is invalid
+ * Return: the value of the bit at index or
+ * -1 when index is null or not valid
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	if (index >= sizeof(unsigned long int) * 8)
+	if (index >= 8 * sizeof(unsigned long int))
 		return (-1);
 
 	return ((n >> index) & 1);
