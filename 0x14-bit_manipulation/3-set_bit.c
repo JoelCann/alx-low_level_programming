@@ -2,9 +2,9 @@
 /**
  * set_bit - changes bit value at given index to 1
  * @n: pointer to no. to be modified
- * @index: index of the bit to set
+ * @index: index of the bit in question
  *
- * Return: 1 on success, or -1 on failure
+ * Return: 1 if success/-1 if failed.
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
