@@ -1,18 +1,18 @@
 #include "main.h"
 /**
- * read_textfile - reads a text file and prints it to standard output
- * @filename: the name of the file to read
- * @letters: the number of letters to read from the file
+ * read_textfile - reads aand print a text fileto standard output.
+ * @filename: name of the file to be read
+ * @letters: no. of letters to be read
  *
- * Return: the number of letters actually read and printed to standard output,
- * or 0 if the file can not be opened or read, or if write fails to write the
- * expected number of bytes.
+ * Return: no. of letters read and printed to standard output/ 0
+ * if file can't be read or opened/ write fails to write
+ * expected no. of bytes.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	FILE *fp;
 	char *buffer;
-	ssize_t bytes_read, bytes_written;
+	ssize_t read_bytes, bytes_written;
 
 	if (filename == NULL)
 	{
@@ -29,15 +29,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		fclose(fp);
 		return (0);
 	}
-	bytes_read = fread(buffer, sizeof(char), letters, fp);
-	if (bytes_read <= 0)
+	read_bytes = fread(buffer, sizeof(char), letters, fp);
+	if (read_bytes <= 0)
 	{
 		fclose(fp);
 		free(buffer);
 		return (0);
 	}
-	bytes_written = fwrite(buffer, sizeof(char), bytes_read, stdout);
-	if (bytes_written != bytes_read)
+	bytes_written = fwrite(buffer, sizeof(char), read_bytes, stdout);
+	if (bytes_written != read_bytes)
 	{
 		fclose(fp);
 		free(buffer);
@@ -45,6 +45,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	fclose(fp);
 	free(buffer);
-	return (bytes_read);
+	return (read_bytes);
 }
 
