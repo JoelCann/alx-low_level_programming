@@ -29,10 +29,10 @@ int main(int argc, char *argv[])
 	for (a = 0, x = 1; a < len; a += 1)
 		x *= argv[1][a];
 	p[2] = l[(x ^ 85) & 63];
-	for (b = argv[1][0], a = 0; a < len; a += 1)
+	for (x = argv[1][0], a = 0; a < len; a += 1)
 		if ((char)x <= argv[1][a])
 			x = argv[1][a];
-	srand(b ^ 14);
+	srand(x ^ 14);
 	p[3] = l[rand() & 63];
 	for (x = 0, a = 0; a < len; a += 1)
 		x += argv[1][a] * argv[1][a];
