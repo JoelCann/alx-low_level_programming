@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 	p[4] = l[(x ^ 239) & 63];
 	for (x = 0, a = 0; (char)a < argv[1][0]; a++)
 		x = rand();
-	p[5] = l[(b ^ 229) & 63];
+	p[5] = l[(x ^ 229) & 63];
 	printf("%s\n", p);
 	return (0);
 }
