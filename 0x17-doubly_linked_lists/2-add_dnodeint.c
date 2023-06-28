@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
- * add_dnodeint - add a new node at the beginning of the linked list
- * @head: double pointer to the beginning of the linked list
- * @n: value to add to the new node
+ * add_dnodeint - adds a new node at beginning of a linked list
+ * @head: d_pointer to the beginning of the linked list
+ * @n: number to add to the new node
  *
- * Return: pointer to the new node, or NULL on failure
+ * Return: pointer to new node/ NULL on failure.
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
