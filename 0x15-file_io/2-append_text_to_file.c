@@ -1,15 +1,15 @@
 #include "main.h"
 
 /**
- * append_text_to_file - Appends text at the end of a file
- * @filename: Name of the file
- * @text_content: NULL terminated string to add at the end of the file
+ * append_text_to_file - Append/ add text at the end of a file
+ * @filename: name of file
+ * @text_content: NULL terminated string to be added at end of the file
  *
- * Return: 1 on success and -1 on failure
+ * Return: 1 if successful/ -1 if failed
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int file, write_status, words = 0;
+	int file, w_status, wrd = 0;
 
 	if (filename == NULL)
 		return (-1);
@@ -20,15 +20,14 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (text_content)
 	{
-		while (text_content[words] != '\0')
-			words++;
+		while (text_content[wrd] != '\0')
+			wrd++;
 
-		write_status = write(file, text_content, words);
-		if (write_status == -1)
+		w_status = write(file, text_content, wrd);
+		if (w_status == -1)
 			return (-1);
 	}
 
 	close(file);
 	return (1);
 }
-

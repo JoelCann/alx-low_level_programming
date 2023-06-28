@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * print_addr - prints address
- * @ptr: magic.
- * Return: no return.
+ * print_addr - prints addresses
+ * @ptr: pointer
+ * Return: nothing.
  */
 void print_addr(char *ptr)
 {
@@ -45,9 +45,9 @@ void print_addr(char *ptr)
 }
 
 /**
- * print_type - prints type
- * @ptr: magic.
- * Return: no return.
+ * print_type - type printer
+ * @ptr: magic/trick
+ * Return: nothing.
  */
 void print_type(char *ptr)
 {
@@ -74,9 +74,9 @@ void print_type(char *ptr)
 }
 
 /**
- * print_osabi - prints osabi
- * @ptr: magic.
- * Return: no return.
+ * print_osabi - produces osabi
+ * @ptr: magic/trick
+ * Return: nothing
  */
 void print_osabi(char *ptr)
 {
@@ -97,9 +97,9 @@ void print_osabi(char *ptr)
 
 
 /**
- * print_version - prints version
- * @ptr: magic.
- * Return: no return.
+ * print_version - produces version
+ * @ptr: magic/trick.
+ * Return: nothing
  */
 void print_version(char *ptr)
 {
@@ -113,7 +113,7 @@ void print_version(char *ptr)
 	printf("\n");
 }
 /**
- * print_data - prints data
+ * print_data - shows data
  * @ptr: magic.
  * Return: no return.
  */
@@ -129,9 +129,9 @@ void print_data(char *ptr)
 		printf(", big endian\n");
 }
 /**
- * print_magic - prints magic info.
- * @ptr: magic.
- * Return: no return.
+ * print_magic - shows information on magic/magic/trick.
+ * @ptr: magic/trick.
+ * Return: nothing.
  */
 void print_magic(char *ptr)
 {
@@ -147,13 +147,13 @@ void print_magic(char *ptr)
 }
 
 /**
- * check_sys - check the version system.
- * @ptr: magic.
- * Return: no return.
+ * check_sys - shows the system version.
+ * @ptr: magic/trick.
+ * Return: nothing
  */
 void check_sys(char *ptr)
 {
-	char sys = ptr[4] + '0';
+	char sys = '0' + ptr[4];
 
 	if (sys == '0')
 		exit(98);
@@ -175,9 +175,9 @@ void check_sys(char *ptr)
 }
 
 /**
- * check_elf - check if it is an elf file.
- * @ptr: magic.
- * Return: 1 if it is an elf file. 0 if not.
+ * check_elf - verify whether it is an elf file.
+ * @ptr: magic/trick.
+ * Return: 1 if elf file/ 0 if not elf file.
  */
 int check_elf(char *ptr)
 {
@@ -193,10 +193,10 @@ int check_elf(char *ptr)
 }
 
 /**
- * main - check the code for Holberton School students.
- * @argc: number of arguments.
- * @argv: arguments vector.
- * Return: Always 0.
+ * main - code checker for students of Holberton School.
+ * @argc: no. of args.
+ * @argv: args vector.
+ * Return: 0.
  */
 int main(int argc, char *argv[])
 {
@@ -213,7 +213,7 @@ int main(int argc, char *argv[])
 
 	if (fd < 0)
 	{
-		dprintf(STDERR_FILENO, "Err: file can not be open\n");
+		dprintf(STDERR_FILENO, "Error: Cannot open file\n");
 		exit(98);
 	}
 
@@ -222,13 +222,13 @@ int main(int argc, char *argv[])
 
 	if (ret_read == -1)
 	{
-		dprintf(STDERR_FILENO, "Err: The file can not be read\n");
+		dprintf(STDERR_FILENO, "Error: File unreadable\n");
 		exit(98);
 	}
 
 	if (!check_elf(ptr))
 	{
-		dprintf(STDERR_FILENO, "Err: It is not an ELF\n");
+		dprintf(STDERR_FILENO, "Error: File not ELF\n");
 		exit(98);
 	}
 
