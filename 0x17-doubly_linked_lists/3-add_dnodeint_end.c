@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
- * add_dnodeint_end - adds a node to the end of a linked list
- * @head: double pointer to the beginning of the linked list
- * @n: value to add to new node
+ * add_dnodeint_end - appends a linked list with a node
+ * @head: double pointer to start of the linked list
+ * @n: number to add to new node
  *
- * Return: pointer to the new node, or NULL on failure
+ * Return: pointer to new node/ NULL on failure
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
